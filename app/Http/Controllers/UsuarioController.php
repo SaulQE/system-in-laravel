@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Usuario;
 use Illuminate\Http\Request;
 
 class UsuarioController extends Controller
 {
     public function index_GET(){
-        return view('usuarios.index');
+        $usuariosDb = Usuario::all();
+
+        return view('usuarios.index',compact('usuariosDb'));
     }
     public function create_GET(){
         return view('usuarios.create');
