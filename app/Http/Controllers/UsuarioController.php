@@ -15,7 +15,25 @@ class UsuarioController extends Controller
     public function create_GET(){
         return view('usuarios.create');
     }
-    public function show_GET($usuarioId){
-        return view('usuarios.show',compact("usuarioId"));
+
+    public function store_POST(Request $request){
+
+        $usuario = new Usuario();
+
+        $usuario->nom_completo=$request->nom_completo;
+        $usuario->correo=$request->correo;
+        $usuario->contraseña=$request->contraseña;
+        $usuario->rol=$request->rol;
+        $usuario->fcreacion=$request->fcreacion;
+        $usuario->estado=$request->has('estado') ? 1 : 0;
+
+        $usuario->save();
+
+        return redirect('/usuarios');
     }
+
+
+/*     public function show_GET($usuarioId){
+        return view('usuarios.show',compact("usuarioId"));
+    } */
 }

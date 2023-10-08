@@ -11,8 +11,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//ruta personalizada - usuarios
-Route::get('/usuarios', [UsuarioController::class,'index_GET']);
+//listar
+Route::get('/usuarios', [UsuarioController::class,'index_GET'])->name('usuarios.index');
+
+//registrar
 Route::get('/usuarios/create', [UsuarioController::class,'create_GET']);
-Route::get('/usuarios/{usuarioId}', [UsuarioController::class,'show_GET']);
+Route::post('/usuarios', [UsuarioController::class,'store_POST'])->name('usuarios.store');
+
+/* Route::get('/usuarios/{usuarioId}', [UsuarioController::class,'show_GET']); */
 

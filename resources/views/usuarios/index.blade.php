@@ -2,18 +2,26 @@
 @section('title','index')
 
 @section('content')
-    <div class="container p-5 my-5 bg-dark text-white">
-        <h3>USUARIO - LISTAR</h3>
-        <table>
-            <tr>
-                <td><b>ID</b></td>
-                <td><b>NomCompleto</b></td>
-                <td><b>Correo</b></td>
-                <td><b>Contraseña</b></td>
-                <td><b>Rol</b></td>
-                <td><b>F.Creación</b></td>
-                <td><b>Estado</b></td>
-            </tr>
+<div align="center">
+    <h3 style="margin-top: 40px">USUARIO - LISTAR</h3>
+    <button class="btn btn-dark">
+        <a href="/usuarios/create" style="text-decoration: none;color: white;">Registrar</a>
+    </button><br><br>
+    
+    <div class="container">
+
+        <table class="table table-bordered table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th><b>ID</b></th>
+                    <th><b>NomCompleto</b></th>
+                    <th><b>Correo</b></th>
+                    <th><b>Contraseña</b></th>
+                    <th><b>Rol</b></th>
+                    <th><b>F.Creación</b></th>
+                    <th><b>Estado</b></th>
+                </tr>
+            </thead>
             @foreach ($usuariosDb as $usuario)
                 <tr>
                     <td>{{ $usuario->usuario_id }}</td>
@@ -22,9 +30,10 @@
                     <td>{{ $usuario->contraseña }}</td>
                     <td>{{ $usuario->rol }}</td>
                     <td>{{ $usuario->fcreacion }}</td>
-                    <td>{{ $usuario->estado }}</td>
+                    <td>{{ $usuario->estado == 1 ? 'Activo' : 'Inactivo' }}</td>
                 </tr>
             @endforeach
         </table>
     </div>
+</div>
 @endsection
