@@ -1,18 +1,16 @@
 @extends('layouts.master')
 @section('title','create')
 
+@section('navbar-title','REGISTRAR - USUARIO')
+
 @section('navbar-links')
     <li class="nav-item">
-        <a class="nav-link" href="#">Link 1</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="#">Link 2</a>
+        <a class="nav-link" href="#">Home</a>
     </li>
 @endsection
 
 @section('content')
-    <div class="container">
-        <h3 style="margin-top: 30px" align="center">CREATE - USUARIO</h3>
+    <div class="container" style="margin-top: 50px">
         
         <form method="post" action="{{ route('usuarios.store') }}" class="mx-auto">
             
