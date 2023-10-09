@@ -1,9 +1,18 @@
 @extends('layouts.master')
 @section('title','index')
 
+@section('navbar-links')
+    <li class="nav-item">
+        <a class="nav-link" href="#">Link 1</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Link 2</a>
+    </li>
+@endsection
+
 @section('content')
 <div align="center">
-    <h3 style="margin-top: 40px">USUARIO - LISTAR</h3>
+    <h3 style="margin-top: 30px">USUARIO - LISTAR</h3>
     <button class="btn btn-dark">
         <a href="/usuarios/create" style="text-decoration: none;color: white;">Registrar</a>
     </button><br><br>

@@ -8,6 +8,20 @@
     <title>@yield('title')</title>
 </head>
 <body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+      
+      <div class="container">
+        <a class="navbar-brand" href="#">SISTEMA ACADÉMICO</a>
+        <div class="collapse navbar-collapse">
+
+          <ul class="navbar-nav mx-5 my-2">
+            @yield('navbar-links')
+          </ul>
+
+        </div>
+      </div>
+      
+    </nav>
     @yield('content')
 </body>
 </html>
