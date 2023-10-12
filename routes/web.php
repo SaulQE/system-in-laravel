@@ -18,5 +18,5 @@ Route::get('/usuarios', [UsuarioController::class,'index_GET'])->name('usuarios.
 Route::get('/usuarios/create', [UsuarioController::class,'create_GET']);
 Route::post('/usuarios', [UsuarioController::class,'store_POST'])->name('usuarios.store');
 
-/* Route::get('/usuarios/{usuarioId}', [UsuarioController::class,'show_GET']); */
-
+//editar
+Route::get('/usuarios/{usuario}/edit', [UsuarioController::class,'edit_GET'])->name('usuarios.edit');

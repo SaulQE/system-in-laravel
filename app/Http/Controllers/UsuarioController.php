@@ -32,8 +32,10 @@ class UsuarioController extends Controller
         return redirect('/usuarios');
     }
 
+    public function edit_GET(Usuario $usuario){
 
-/*     public function show_GET($usuarioId){
-        return view('usuarios.show',compact("usuarioId"));
-    } */
+        /* $usuario = Usuario::find($usuarioId); */
+        return view('usuarios.edit', compact('usuario'));
+    }
+
 }

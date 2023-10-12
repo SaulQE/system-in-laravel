@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('title','index')
 
-@section('navbar-title','USUARIO - LISTAR')
+@section('navbar-title','USUARIO - INDEX')
 
 @section('navbar-links')
     <li class="nav-item">
@@ -26,6 +26,7 @@
                     <th><b>Rol</b></th>
                     <th><b>F.Creación</b></th>
                     <th><b>Estado</b></th>
+                    <th><b>Acción</b></th>
                 </tr>
             </thead>
             @foreach ($usuariosDb as $usuario)
@@ -37,6 +38,9 @@
                     <td>{{ $usuario->rol }}</td>
                     <td>{{ $usuario->fcreacion }}</td>
                     <td>{{ $usuario->estado == 1 ? 'Activo' : 'Inactivo' }}</td>
+                    <td>
+                        <a href="{{ route('usuarios.edit',$usuario->usuario_id) }}">Editar</a>
+                    </td>
                 </tr>
             @endforeach
         </table>
