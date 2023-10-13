@@ -20,3 +20,8 @@ Route::post('/usuarios', [UsuarioController::class,'store_POST'])->name('usuario
 
 //editar
 Route::get('/usuarios/{usuario}/edit', [UsuarioController::class,'edit_GET'])->name('usuarios.edit');
+Route::put('/usuarios/{usuario}', [UsuarioController::class,'update_PUT'])->name('usuarios.update');
+
+//eliminar
+Route::get('/usuarios/{usuario}/delete',[UsuarioController::class,'delete_GET'])->name('usuarios.delete');
+Route::delete('/usuarios/{usuario}',[UsuarioController::class,'destroy_DELETE'])->name('usuarios.destroy');

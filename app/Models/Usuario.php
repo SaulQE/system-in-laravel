@@ -12,4 +12,7 @@ class Usuario extends Model
     protected $table="usuarios"; //en referencia a la tabla usuarios.
     protected $primaryKey="usuario_id"; //en referencia a la clave primaria usuario_id.
     public $timestamps=false; //indica que no actualice automáticamente los campos created_at y updated_at.
+
+    //registro por asignación masiva implícito (recomendable)
+    protected $guarded=[];
 }

@@ -39,7 +39,16 @@
                     <td>{{ $usuario->fcreacion }}</td>
                     <td>{{ $usuario->estado == 1 ? 'Activo' : 'Inactivo' }}</td>
                     <td>
-                        <a href="{{ route('usuarios.edit',$usuario->usuario_id) }}">Editar</a>
+                        <div class="btn-group" role="group">
+                            <button type="button" class="btn btn-warning">
+                                <a href="{{ route('usuarios.edit',$usuario) }}">
+                                    <img src="{{ asset('icons/gear-fill.svg') }}" alt="">Editar</a>
+                            </button>
+                            <button type="button" class="btn btn-danger">
+                                <a href="{{ route('usuarios.delete',$usuario) }}">
+                                    <img src="{{ asset('icons/x-circle-fill.svg') }}" alt="">Eliminar</a>
+                            </button>
+                          </div>
                     </td>
                 </tr>
             @endforeach

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Usuario;
 use Illuminate\Http\Request;
+use App\Http\Requests\CreateUsuarioRequest;
 
 class UsuarioController extends Controller
 {
@@ -16,7 +17,7 @@ class UsuarioController extends Controller
         return view('usuarios.create');
     }
 
-    public function store_POST(Request $request){
+    public function store_POST(CreateUsuarioRequest $request){
 
         $usuario = new Usuario();
 
@@ -36,6 +37,21 @@ class UsuarioController extends Controller
 
         /* $usuario = Usuario::find($usuarioId); */
         return view('usuarios.edit', compact('usuario'));
+    }
+
+    public function update_PUT(Usuario $usuario, CreateUsuarioRequest $request){
+        $usuario->update($request->all());
+
+        return redirect('/usuarios');
+    }
+
+    public function delete_GET(Usuario $usuario){
+        return view('usuarios.delete',compact('usuario'));
+    }
+
+    public function destroy_DELETE(Usuario $usuario){
+        $usuario->delete();
+        return redirect('/usuarios');
     }
 
 }
