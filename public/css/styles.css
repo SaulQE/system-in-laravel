@@ -17,3 +17,11 @@
     height: 25px;
     padding-right: 5px;
 }
+
+.error-message{
+    color: red;
+    font-size: 12px; /* Tamaño de fuente más pequeño */
+    margin-top: 4px; /* Menos margen superior */
+    padding: 2px; /* Menos espacio interno */
+    float: right;
+}

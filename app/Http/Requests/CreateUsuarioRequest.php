@@ -27,7 +27,7 @@ class CreateUsuarioRequest extends FormRequest
             'contraseña'=>'required',
             'rol'=>'required',
             'fcreacion'=>'required',
-            'estado'=>'required'
+            'estado' => ''
         ];
     }
 

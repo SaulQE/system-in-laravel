@@ -24,7 +24,7 @@
                 
                 <label>Nombre Completo:</label>
                 <input type="text" class="form-control" name="nom_completo" value="{{ old('nombre',$usuario->nom_completo) }}"/>
-                <span style="color: red">
+                <span class="error-message">
                     @error('nom_completo')
                         {{ $message }}
                     @enderror
@@ -32,7 +32,7 @@
 
                 <label>Correo:</label>
                 <input type="text" class="form-control" name="correo" value="{{ old('correo',$usuario->correo) }}"/>
-                <span style="color: red">
+                <span class="error-message">
                     @error('correo')
                         {{ $message }}
                     @enderror
@@ -40,7 +40,7 @@
 
                 <label>Contraseña:</label>
                 <input type="password" class="form-control" name="contraseña" value="{{ old('contraseña',$usuario->contraseña) }}"/>
-                <span style="color: red">
+                <span class="error-message">
                     @error('contraseña')
                         {{ $message }}
                     @enderror
@@ -48,7 +48,7 @@
 
                 <label>Rol:</label>
                 <input type="text" class="form-control" name="rol" value="{{ old('rol',$usuario->rol) }}"/>
-                <span style="color: red">
+                <span class="error-message">
                     @error('rol')
                         {{ $message }}
                     @enderror
@@ -56,15 +56,15 @@
 
                 <label>F.Creación:</label>
                 <input type="date" class="form-control" name="fcreacion" value="{{ old('fcreacion',$usuario->fcreacion) }}"/>
-                <span style="color: red">
+                <span class="error-message">
                     @error('fcreacion')
                         {{ $message }}
                     @enderror
                 </span><br>
 
                 <label>Estado del Usuario:</label>
-                <input type="checkbox" class="form-check-input" name="estado" value="{{ old('estado',$usuario->estado) }}"/><br>
-                <span style="color: red">
+                <input type="checkbox" class="form-check-input" name="estado" value="1" {{ $usuario->estado == 1 ? 'checked' : '' }} /><br>
+                <span class="error-message">
                     @error('estado')
                         {{ $message }}
                     @enderror

@@ -19,6 +19,8 @@ class UsuarioController extends Controller
 
     public function store_POST(CreateUsuarioRequest $request){
 
+        /* Usuario::create($request->all()); */
+
         $usuario = new Usuario();
 
         $usuario->nom_completo=$request->nom_completo;
@@ -40,7 +42,16 @@ class UsuarioController extends Controller
     }
 
     public function update_PUT(Usuario $usuario, CreateUsuarioRequest $request){
-        $usuario->update($request->all());
+        /* $usuario->update($request->all()); */
+
+        $usuario->update([
+            'nom_completo' => $request->nom_completo,
+            'correo'=> $request->correo,
+            'contraseña'=> $request->contraseña,
+            'rol'=> $request->rol,
+            'fcreacion'=> $request->fcreacion,
+            'estado'=> $request->has('estado') ? 1 : 0
+        ]);
 
         return redirect('/usuarios');
     }

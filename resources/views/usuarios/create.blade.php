@@ -19,40 +19,40 @@
 
             <div class="shadow p-4 mb-4 bg-white " style="width: 370px; margin: 20px auto; border-radius: 10px">
                 <label>Nombre Completo:</label>
-                <input type="text" class="form-control" name="nom_completo" />
-                <span style="color: red">
+                <input type="text" class="form-control" name="nom_completo" value="{{ old('nom_completo') }}"/>
+                <span class="error-message">
                     @error('nom_completo')
                         {{ $message }}
                     @enderror
                 </span><br>
 
                 <label>Correo:</label>
-                <input type="text" class="form-control" name="correo" />
-                <span style="color: red">
+                <input type="text" class="form-control" name="correo" value="{{ old('correo') }}"/>
+                <span class="error-message">
                     @error('correo')
                         {{ $message }}
                     @enderror
                 </span><br>
 
                 <label>Contraseña:</label>
-                <input type="password" class="form-control" name="contraseña" />
-                <span style="color: red">
+                <input type="password" class="form-control" name="contraseña" value="{{ old('contraseña') }}"/>
+                <span class="error-message">
                     @error('contraseña')
                         {{ $message }}
                     @enderror
                 </span><br>
 
                 <label>Rol:</label>
-                <input type="text" class="form-control" name="rol" />
-                <span style="color: red">
+                <input type="text" class="form-control" name="rol" value="{{ old('rol') }}"/>
+                <span class="error-message">
                     @error('rol')
                         {{ $message }}
                     @enderror
                 </span><br>
 
                 <label>F.Creación:</label>
-                <input type="date" class="form-control" name="fcreacion" />
-                <span style="color: red">
+                <input type="date" class="form-control" name="fcreacion" value="{{ old('fcreacion') }}"/>
+                <span class="error-message">
                     @error('fcreacion')
                         {{ $message }}
                     @enderror
@@ -60,7 +60,7 @@
 
                 <label>Estado del Usuario:</label>
                 <input type="checkbox" class="form-check-input" name="estado" checked/><br>
-                <span style="color: red">
+                <span class="error-message">
                     @error('estado')
                         {{ $message }}
                     @enderror
